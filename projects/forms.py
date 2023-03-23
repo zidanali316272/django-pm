@@ -10,4 +10,13 @@ class PCF(forms.ModelForm):
              'title': forms.TextInput(),
              'description':forms.Textarea()
         }
-        
+
+class PUF(forms.ModelForm):
+    class Meta:
+        model= models.Project
+        fields=['category', 'title', 'status']
+        widgets={
+             'category': forms.Select(),
+             'title': forms.TextInput(),
+             'status':forms.Select()
+        }       

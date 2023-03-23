@@ -28,9 +28,10 @@ class Project(models.Model):
         return self.title
 
 class Task(models.Model):
-      descrirtion= models.TextField()
-      is_compleated= models.BooleanField(default=False)
+      description= models.TextField()
+      is_completed= models.BooleanField(default=False)
       project= models.ForeignKey(Project,on_delete=models.CASCADE)
       def __str__(self):
-          return self.descrirtion
+          return self.description
 
+ 

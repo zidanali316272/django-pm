@@ -20,7 +20,7 @@ class Project(models.Model):
       created_at= models.DateTimeField(auto_now_add=True)
       ubdated_at= models.DateTimeField(auto_now=True)
       category=models.ForeignKey(Category, on_delete=models.PROTECT)
-      user=models.ForeignKey(AUTH_USER_MODEL,on_delete=models.CASCADE)
+      user=models.ForeignKey(AUTH_USER_MODEL,on_delete=models.CASCADE,null=True)
       status=models.IntegerField(choices=ProjectsStatus.choices,default=ProjectsStatus.PENDING)
      
       

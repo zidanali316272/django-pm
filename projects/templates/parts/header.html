@@ -1,0 +1,31 @@
+{% load i18n %}
+<header>
+<nav class="navbar navbar-expand-md bg-gradient bg-success navbar-dark p-3 ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href=" {% url 'p_l' %}"> {% trans 'Project Management' %} </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mb-2 mb-md-0">
+          <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'p_l' %}">{% trans 'Home' %}</a>
+        </li>
+        </ul>
+        <form method="Get" action="{% url 'p_l' %}" class="d-flex">
+            <div class="input-group" >
+              <input type="text" name="q" class="form-control" placeholder="{% trans 'Search' %}" value="{{ request.GET.q}}"/>
+              <button class="btn btn-outline-light" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+          
+
+
+            </div>
+
+        </form>
+        
+      </div>
+    </div>
+  </nav>
+</header>

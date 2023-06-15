@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "type": "kotlin",
+            "request": "attach",
+            "name": "Kotlin Attach",
+            "hostName": "localhost",
+            "port": 8000,
+            "timeout": 30000
+        },
+    {
+        "type": "kotlin",
+        "request": "launch",
+        "name": "Kotlin Launch",
+        "projectRoot": "${workspaceFolder}",
+        "mainClass": "path.to.your.MainClassKt"
+    }
+    ]
+}

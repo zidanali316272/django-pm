@@ -1,3 +1,5 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.urls import reverse_lazy,reverse
 from django.views.generic import ListView,CreateView,UpdateView,DeleteView
 from . import models
@@ -7,7 +9,14 @@ from . import forms
 class Projectlv(ListView):
       model= models.Project
       template_name= 'project/list.html'
-      
+      paginate_by = 6
+
+      def get_queryset(self):
+            query_set= super().get_queryset()
+            where = {}
+            q=self.request.GET.get('q',None)
+            if q: where['title__icontains'] = q
+            return query_set.filter(**where)
 class PCV(CreateView):
       model = models.Project
       form_class = forms.PCF
